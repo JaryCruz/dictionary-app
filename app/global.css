@@ -1,0 +1,139 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-blue: hsl(195, 100%, 42%); 
+  --white: hsl(0, 100%, 100%); 
+  --black: hsl(0, 100%, 0%); 
+  --gray: hsl(0, 0%, 85%); 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --black: hsl(0, 100%, 100%); 
+    --white: hsl(0, 100%, 0%);
+  }
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: none;
+  font-size: 1rem;
+}
+
+button:hover {
+  opacity: .8;
+}
+
+.container {
+  max-width: 700px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+header h1 {
+  color: var(--black);
+  font-size: 2rem;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  height: 2.8rem;
+  width: 100%;
+}
+
+.form span {
+  position: absolute;
+  top: 175px;
+  font-weight: 600;
+  color: hsl(0, 100%, 45%);
+}
+
+.form input {
+  flex: 1;
+  border-radius: .5rem;
+  font-size: 1rem;
+  border: 2px solid var(--gray);
+  background-color: var(--white);
+  color: var(--black);
+  padding: .8rem;
+  outline: none;
+}
+
+.form input:focus {
+  border-color: var(--primary-blue);
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: white;
+  height: 100%;
+  min-width: 6.5rem;
+  border-radius: .5rem;
+  outline: none;
+}
+
+.btn-primary:focus {
+  border: 2px dotted white;
+}
+
+/* Results */
+.word-results {
+  margin-top: 2.5rem;
+}
+
+.word-results h2 {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.word-results p {
+  line-height: 1.5;
+}
+
+.word-results h3 {
+  font-size: 1.3rem;
+  margin: 1.3rem 0 .5rem;
+  text-transform: capitalize;
+}
+
+.word-results ul li {
+  margin-left: 1.2rem;
+  margin-bottom: .5rem;
+}
+
+.not-found {
+  font-size: 1.2rem;  
+  margin-top: 2rem;
+}
+
+@media (max-width: 400px) {
+  .btn-primary {
+    min-width: 5rem;
+  }
+
+  header {
+    margin-top: 1.5rem;
+  }
+}
