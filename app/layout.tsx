@@ -22,9 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={nunito.className}>
         <Header />
-        <main className='container'>
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   )

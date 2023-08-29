@@ -12,7 +12,6 @@ export default function HomePage() {
     { word: "", phonetic: "", phonetics: [], origin: "", meanings: [] }
   )
 
-
   function handleSubmit(e: FormEvent) {
     e.preventDefault()  
 
@@ -31,7 +30,7 @@ export default function HomePage() {
   }
 
   return (
-    <>
+    <main className="container">
       <form className="form" onSubmit={handleSubmit}>
         <input 
           type="text" 
@@ -45,8 +44,12 @@ export default function HomePage() {
       {wordData == null ? (
         <WordNotFound />
       ) : (
-        <WordDefinition word={wordData.word} meanings={wordData.meanings} />
+        <WordDefinition 
+          word={wordData.word} 
+          phonetic={wordData.phonetic} 
+          meanings={wordData.meanings} 
+        />
       )}
-    </>
+    </main>
   )
 }

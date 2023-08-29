@@ -12,13 +12,15 @@ type Meanings = {
 
 type WordDefinitionProps = {
   word: string
+  phonetic: string
   meanings: Meanings[]
 }
 
-export default function WordDefinition({ word, meanings }: WordDefinitionProps) {
+export default function WordDefinition({ word, phonetic, meanings }: WordDefinitionProps) {
   return (
     <div className="word-results">
       <h2>{word}</h2>
+      <p className="phonetic">{phonetic}</p>
       {meanings.map((meaning: Meanings, index: number) => (
         <div key={index}>
           <h3>{meaning.partOfSpeech}</h3>
